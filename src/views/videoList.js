@@ -1,19 +1,13 @@
 var VideoListView = Backbone.View.extend({
 
-  // el: '.list',
-
-  // initialize: function() {
-  //   // this.listenTo(this.collection, 'sync', this.render);
-  //     this.videos = window.exampleVideoData;
-  //     this.render();
-  // },
-
   render: function() {
     console.log("VideoListView Render Ran");
 
+    // detatch previous placeholders and insert our video list template
     this.$el.children().detach();
     this.$el.html(this.template());
 
+    // For each model in the collection, render each video entry
     this.collection.each(this.renderVideo, this);
 
     return this;

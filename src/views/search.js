@@ -7,6 +7,7 @@ var SearchView = Backbone.View.extend({
   },
 
   render: function() {
+    // pass the template html into this element
     this.$el.html(this.template());
     return this;
   },
